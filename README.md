@@ -1,5 +1,7 @@
 # A/B Testing Case Study — E-commerce Conversion Optimization
 
+app: https://a-b-testing-a.streamlit.app/
+
 ## Business Problem
 Does adding a **'Limited Time Offer' badge** on product pages increase purchase conversion rate?
 

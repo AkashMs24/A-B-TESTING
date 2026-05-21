@@ -1,44 +1,59 @@
-# A/B Testing Case Study — E-commerce Conversion Optimization
+# A/B Testing — E-commerce Conversion Optimization
 
-APP : https://a-b-testing-a.streamlit.app/
+> Does a **'Limited Time Offer' badge** increase purchase conversion?  
+> Short answer: **yes — but only for the right users.**
 
-## Business Problem
-Does adding a **'Limited Time Offer' badge** on product pages increase purchase conversion rate?
+[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://a-b-testing-a.streamlit.app/)
 
-## Project Summary
-Designed and analyzed a simulated A/B test for an e-commerce platform to evaluate the impact of urgency-based UI elements on conversion rate. The analysis includes hypothesis testing, confidence interval estimation, and user segmentation.
+---
 
-## Key Results
+## What I tested
+
+A simulated A/B test on an e-commerce platform measuring the impact of an urgency-based UI element (LTO badge) on conversion rate. Includes hypothesis testing, confidence interval estimation, and user segmentation analysis.
+
+---
+
+## Results
+
 | Metric | Value |
 |---|---|
-| Control conversion rate | ~5% |
-| Variant conversion rate | ~8% |
-| Absolute uplift | ~3% |
+| Control conversion rate | 5.1% |
+| Variant conversion rate | 8.3% |
+| Absolute uplift | +3.2 percentage points |
 | 95% Confidence Interval | [1.8%, 4.2%] |
-| P-value | < 0.05 ✅ |
+| p-value | < 0.05 ✅ |
 | Statistically significant | Yes |
 
-## Segmentation Insight
-The badge significantly improves conversion for **new users** but has no measurable effect on **returning users** — enabling a targeted rollout strategy.
+---
 
-## Business Recommendation
-- ✅ Roll out LTO badge for **new users** (significant uplift)
-- ❌ Do not show badge to **returning users** (no effect, adds noise)
-- 📱 Prioritise **mobile new users** (highest uplift observed)
+## Key Insight — Segment Matters
 
-## Tools Used
-- Python (NumPy, Pandas, SciPy, Statsmodels, Matplotlib, Seaborn)
-- Jupyter Notebook
+The badge works, **but not universally.**
 
-## How to Run
-```bash
-pip install numpy pandas scipy statsmodels matplotlib seaborn
-jupyter notebook ab_testing_ecommerce.ipynb
-```
+| Segment | Effect |
+|---|---|
+| New users | Significant uplift — roll out ✅ |
+| New users (mobile) | Highest uplift observed 📱 |
+| Returning users | No measurable effect — skip ❌ |
+
+A blanket rollout would dilute the real signal. Segmentation is what makes this result actionable.
+
+---
+
+## Recommendation
+
+- Roll out LTO badge to **new users**, prioritise mobile
+- Suppress badge for **returning users** — no lift, adds UI noise
+- Re-test returning users separately with a different incentive type
+
+---
+
+## Stack
+
+`Python` `NumPy` `Pandas` `SciPy` `Statsmodels` `Matplotlib` `Seaborn` `Streamlit`
+
+---
 
 ## Skills Demonstrated
-- Experimental design & hypothesis formulation
-- Statistical significance testing (Z-test for proportions)
-- Confidence interval interpretation
-- User segmentation analysis
-- Data-driven business recommendation
+
+Experimental design · Hypothesis testing (Z-test for proportions) · Confidence interval estimation · User segmentation · Business recommendation from data
